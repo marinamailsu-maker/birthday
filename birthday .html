@@ -1,0 +1,117 @@
+<birthday.html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Uncle</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle at top, #1a1a40, #000);
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: fadeIn 3s;
+}
+
+h1 {
+    font-size: 3em;
+    color: #ffd700;
+    text-shadow: 0 0 25px gold;
+}
+
+p {
+    font-size: 1.3em;
+    margin: 20px;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* hearts */
+.heart {
+    position: absolute;
+    font-size: 22px;
+    color: red;
+    animation: float 6s linear infinite;
+}
+
+@keyframes float {
+    from {transform: translateY(100vh);}
+    to {transform: translateY(-10vh);}
+}
+
+/* fireworks */
+.firework {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: yellow;
+    border-radius: 50%;
+    animation: explode 1.2s ease-out infinite;
+}
+
+@keyframes explode {
+    from {transform: scale(0);}
+    to {transform: scale(25); opacity: 0;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎶 SOFT LOVEFUL BIRTHDAY MUSIC -->
+<audio autoplay loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+
+    <h1>🎉 Happy Birthday Dear Uncle ❤️ 🎉</h1>
+
+    <h2>🎂🎂🎂</h2>
+
+    <p>
+    You are not just my uncle, but one of the most important people in my life.<br><br>
+    Your love, care and guidance always give me strength.<br><br>
+    May your life be filled with peace, happiness and good health.<br><br>
+    I am truly blessed to have you.<br><br>
+    With lots of love 💖
+    </p>
+
+</div>
+
+<script>
+// floating hearts
+setInterval(() => {
+    let h = document.createElement("div");
+    h.className = "heart";
+    h.innerHTML = "❤️";
+    h.style.left = Math.random() * 100 + "vw";
+    document.body.appendChild(h);
+    setTimeout(() => h.remove(), 6000);
+}, 400);
+
+// fireworks
+setInterval(() => {
+    let f = document.createElement("div");
+    f.className = "firework";
+    f.style.left = Math.random() * 100 + "vw";
+    f.style.top = Math.random() * 100 + "vh";
+    document.body.appendChild(f);
+    setTimeout(() => f.remove(), 1200);
+}, 800);
+</script>
+
+</body>
+</html>
